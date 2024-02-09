@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/static.css">
+
+    <title>Guitar Shop</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Guitar Shop</h1>
+    <a th:href="@{/about}" class="btn btn-primary btn-sm mb-3">About</a>
+    <hr>
+    <h2>Guitar Parts</h2>
+    <form th:action="@{/mainscreen}">
+        Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
+        &nbsp;
+        <input type="submit" value="Search" />
+        &nbsp;
+        <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
+    </form>
+    <br><br>
+    <a th:href="@{/showFormAddInPart}" class="btn btn-primary btn-sm mb-3">Add Inhouse Part</a>
+    <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-sm mb-3">Add Outsourced Part</a>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>Min Inventory Value</th>
+            <th>Max Inventory Value</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempPart : ${parts}">
+            <td th:text="${tempPart.name}">1</td>
+            <td th:text="${tempPart.price}">1.0</td>
+            <td th:text="${tempPart.inv}">1</td>
+            <td th:text="${tempPart.minimumInventory}">1</td>
+            <td th:text="${tempPart.maximumInventory}">1</td>
+            <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
+                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
+                   onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h2>Products</h2>
+    <form th:action="@{/mainscreen}">
+        Filter: <input type="text" name="productkeyword" id="productkeyword" size="50" th:value="${productkeyword}" required />
+        &nbsp;
+        <input type="submit" value="Search" />
+        &nbsp;
+        <input type="button" value="Clear" id="btnClearProduct" onclick="clearSearch()" />
+    </form>
+    <script type="text/javascript">
+        function clearSearch() {
+            window.location = "[[@{/}]]";
+        }
+    </script>
+    <div th:if="${purchaseMessage}" th:text="${purchaseMessage}"></div>
+    <br><br>
+    <a th:href="@{/showFormAddProduct}" class="btn btn-primary btn-sm mb-3">Add Product</a>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempProduct : ${products}">
+            <td th:text="${tempProduct.name}">1</td>
+            <td th:text="${tempProduct.price}">1.0</td>
+            <td th:text="${tempProduct.inv}">1</td>
+            <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
+                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
+                   onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                <form th:action="@{/buyProduct}" method="post">
+                    <input type="hidden" th:value="${tempProduct.id}" name="productId" />
+                    <button type="submit" class="btn btn-primary btn-sm mb-3">Buy Now</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

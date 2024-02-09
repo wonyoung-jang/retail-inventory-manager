@@ -1,0 +1,79 @@
+/* General body styles for dark mode */
+body {
+    background-color: #121212; /* Dark background */
+    color: #E0E0E0; /* Light text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for containers or specific sections */
+.container, .content, .main, .wrapper {
+    background-color: #1E1E1E;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #BB86FC; /* Light purple for a bit of color */
+}
+
+/* Links */
+a {
+    color: #BB86FC; /* Same light purple for consistency */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Restores underline on hover for visibility */
+}
+
+/* Buttons */
+button {
+    background-color: #3700B3;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6200EE;
+}
+
+/* Forms */
+input, select, textarea {
+    background-color: #333333;
+    color: #E0E0E0;
+    border: 1px solid #BB86FC;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+label {
+    color: #E0E0E0;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #BB86FC;
+    text-align: left;
+}
+
+th {
+    background-color: #3700B3;
+    color: #FFFFFF;
+}
+
+tr:nth-child(even) {
+    background-color: #292929;
+}
