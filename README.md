@@ -1,43 +1,40 @@
-# Retail Inventory Manager
+## Retail Inventory Manager
 
-## Introduction
+Retail Inventory Manager is a customizable Spring Framework application designed for inventory management in retail settings. It integrates a Java backend with an HTML frontend, offering a specialized solution for tracking products and parts in retail inventories, catering to various retail store types.
 
-Retail Inventory Manager is a customizable Spring Framework application designed for inventory management in retail settings. It features a Java backend and an HTML front-end, tailored for managing inventory in various types of retail stores. This application is ideal for businesses needing a specialized solution for tracking products and parts in their inventory.
+{TODO Image  Placeholder for Project Overview}
+
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
 ## Technologies Used
-
 - Java
 - Spring Framework
 - HTML/CSS
 - Maven
 
 ## Features
+- Customizable HTML user interface tailored for a fictional retail store.
+- Comprehensive product and part management in inventory.
+- "Buy Now" functionality enabling product purchases.
+- Inventory validation to maintain appropriate stock levels.
+- Conditional logic for sample inventory additions.
+- An About page with detailed information about the retail store.
+- Unit testing to ensure the reliability of inventory functionalities.
 
-- Customizable HTML user interface for a fictional shop.
-- Management of products and parts in inventory.
-- "Buy Now" functionality for products.
-- Inventory validation for maintaining optimal stock levels.
-- Sample inventory addition with conditional logic.
-- About page providing details about the retail store.
-- Unit testing for inventory features.
+## Installation
+Follow these steps to get Retail Inventory Manager up and running:
+1. Clone the project from its Git repository.
+2. Open the project in your preferred IDE.
+3. Install Maven dependencies to set up the project environment.
+4. Launch the application via the IDE to start managing retail inventory.
 
-## Installation Instructions
-
-To install and run Retail Inventory Manager, follow these steps:
-
-1. Clone the project from the Git repository.
-2. Open the project in your IDE
-3. Ensure Maven dependencies are correctly installed.
-4. Run the application through an IDE.
-
-## Contributing
-
-Contributions to the Retail Inventory Manager project are welcome. Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Submit a pull request with a clear description of the changes.
+## Usage
+The application provides a user-friendly interface for managing retail inventory, allowing users to add, remove, and update items, alongside features to purchase products and validate stock levels for efficient inventory management.
 
 ## License
-
-[License](LICENSE)
+[MIT License](LICENSE)
