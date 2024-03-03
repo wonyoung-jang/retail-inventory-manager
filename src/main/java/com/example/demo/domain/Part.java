@@ -18,8 +18,10 @@ public abstract class Part implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     String name;
+
     @Min(value = 0, message = "Price value must be positive")
     double price;
+    
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
@@ -110,6 +112,7 @@ public abstract class Part implements Serializable {
     public String toString(){
         return this.name;
     }
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
