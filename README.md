@@ -6,17 +6,22 @@ Retail Inventory Manager is a customizable Spring Framework application designed
 
 ## Table of Contents
 
+- [Languages Used](#languages-used)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 
-## Technologies Used
+## Languages Used
 
 - Java
+- HTML
+- CSS
+
+## Technologies Used
+
 - Spring Framework
-- HTML/CSS
 - Maven
 
 ## Features
